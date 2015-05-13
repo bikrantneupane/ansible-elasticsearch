@@ -7,7 +7,7 @@ elasticsearch_download_url: https://download.elasticsearch.org/elasticsearch/ela
 elasticsearch_version: 1.4.2
 elasticsearch_apt_repos:
   - 'ppa:webupd8team/java'
-elasticsearch_apt_java_package: oracle-java7-installer
+elasticsearch_apt_oracle_java_package: oracle-java7-installer
 elasticsearch_apt_dependencies:
   - htop
   - ntp
@@ -25,4 +25,7 @@ elasticsearch_service_state: started
 
 # Non-Elasticsearch Defaults
 apt_cache_valid_time: 300 # seconds between "apt-get update" calls.
-elasticsearch_install_java: "true"
+elasticsearch_install_oracle_java: "false"
+apt_install_openjdk_java: "true"
+apt_openjdk_java_package: "openjdk-7-jre"
+

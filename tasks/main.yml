@@ -15,12 +15,16 @@
 # Accept Oracle license
 - name: Accept Oracle license prior JDK installation
   shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections; echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections creates=/usr/lib/jvm/java-7-oracle
-  when: elasticsearch_install_java
+  when: elasticsearch_install_oracle_java
 
-# Install Java
-- name: Install dependencies
-  apt: pkg={{elasticsearch_apt_java_package}} state=present
-  when: elasticsearch_install_java
+# Install Oracle Java
+- name: Install Oracle Java
+  apt: pkg={{elasticsearch_apt_oracle_java_package}} state=present
+  when: elasticsearch_install_oracle_java
+
+- name: Install OpenJDK Java
+  apt: pkg={{apt_openjdk_java_package}} state=present
+  when: apt_install_openjdk_java
 
 # Install dependencies
 - name: Install dependencies
