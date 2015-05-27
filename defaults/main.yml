@@ -15,11 +15,13 @@ elasticsearch_apt_dependencies:
 elasticsearch_max_open_files: 65535
 elasticsearch_home_dir: /usr/share/elasticsearch
 elasticsearch_plugin_dir: /usr/share/elasticsearch/plugins
-elasticsearch_log_dir: /var/log/elasticsearch
-elasticsearch_data_dir: /var/lib/elasticsearch
-elasticsearch_work_dir: /tmp/elasticsearch
+
+elasticsearch_log_dir:  /data/log/elasticsearch/log
+elasticsearch_data_dir: /data/log/elasticsearch/data
+elasticsearch_work_dir: /data/log/elasticsearch/work
+
 elasticsearch_conf_dir: /etc/elasticsearch
-elasticsearch_service_startonboot: no
+elasticsearch_service_startonboot: yes
 #elasticsearch_http_cors_enabled: "false"
 elasticsearch_service_state: started
 elasticsearch_network_host: 127.0.0.1
